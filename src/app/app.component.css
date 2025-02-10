@@ -4,7 +4,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(86, 56, 56, 0.808);
 }
 
 .logo {
@@ -26,4 +26,16 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     font-size: 16px;
+}
+
+.image-container {
+    text-align: center;
+    margin-top: 20px;
+    /* Adjust spacing as needed */
+}
+
+.centered-image {
+    max-width: 80%;
+    /* Optional: limits the image width */
+    height: auto;
 }
