@@ -1,17 +1,222 @@
 <header>
-  <div class="logo-container">
-    <img src="/assets/logo.png" alt="Logo" class="logo" />
+  <div class="header-content">
+    <div class="logo-title">
+      <div class="logo-container">
+        <img src="/images/logo.png" alt="Logo" class="logo" />
+      </div>
+      <div class="title-container">
+        <h1>Art of the Maze: Mazes as Fine Art</h1>
+      </div>
+    </div>
+    <nav class="desktop-nav">
+      <ul>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li>
+          <a
+            href="https://www.facebook.com/ruthunit"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fab fa-facebook fa-lg"></i>
+          </a>
+        </li>
+        <li>
+          <a
+            href="http://ruthunit.bsky.social/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="images/bluesky-resized.png"
+              alt="Blue Sky Studios"
+              width="20px"
+            />
+          </a>
+        </li>
+        <li>
+          <a href="mailto:ruthunit@artofthemaze.com">
+            <i class="fas fa-envelope fa-lg"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Hamburger Icon for Mobile (visible only on small screens) -->
+    <div class="hamburger" (click)="toggleMenu()">
+      <i class="fas fa-bars fa-2x"></i>
+    </div>
   </div>
-  <nav>
+
+  <!-- Mobile Dropdown Navigation (visibile when menuOpen is true)-->
+  <nav class="mobile-nav" *ngIf="menuOpen">
     <ul>
-      <li><a href="#about">About Me</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about" (click)="toggleMenu()">About Me</a></li>
+      <li><a href="#gallery" (click)="toggleMenu()">Gallery</a></li>
+      <li>
+        <a
+          href="https://www.facebook.com/ruthunit"
+          target="_blank"
+          rel="noopener noreferrer"
+          (click)="toggleMenu()"
+        >
+          <i class="fab fa-facebook fa-lg"></i>
+        </a>
+      </li>
+      <li>
+        <a
+          href="http://ruthunit.bsky.social/"
+          target="_blank"
+          rel="noopener noreferrer"
+          (click)="toggleMenu()"
+        >
+          <img
+            src="images/bluesky-resized.png"
+            alt="Blue Sky Studios"
+            width="20px"
+          />
+        </a>
+      </li>
+      <li>
+        <a href="mailto:ruthunit@artofthemaze.com">
+          <i class="fas fa-envelope fa-lg"></i>
+        </a>
+      </li>
     </ul>
   </nav>
 </header>
 
-<div class="image-container"><img src="assets/rammstein-ink-on-bristol.jpg" alt="Rammstein" class="centered-image" />
+<div class="image-container">
+  <img
+    src="images/rammstein-ink-on-bristol.jpg"
+    alt="Rammstein"
+    class="centered-image"
+  />
+  <div class="image-text">
+    <p><b>Rammstein</b> Ink on Bristol</p>
 </div>
-  
 
+<main>
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about-content">
+      <img src="images/placeholder-photo.png" alt="photo" class="about-photo" />
+      <div class="about-text">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+          tempor venenatis sapien ac dignissim. Sed accumsan scelerisque sapien,
+          ac laoreet velit. Donec a turpis sit amet justo aliquam posuere. Orci
+          varius natoque penatibus et magnis dis parturient montes, nascetur
+          ridiculus mus. Curabitur dignissim tristique arcu vitae porta. Morbi a
+          nibh ullamcorper, condimentum lorem id, elementum sem. Pellentesque a
+          purus luctus, suscipit sem eget, fringilla massa. Fusce venenatis
+          auctor sem eget sodales. Nulla non mauris vitae lacus rutrum bibendum
+          non in nisi.
+        </p>
+        <p>
+          Etiam quam eros, venenatis vitae elit et, maximus pretium mauris.
+          Integer lacinia nunc eu elit ullamcorper scelerisque. Nullam vel
+          turpis erat. In mollis semper dignissim. Etiam et euismod sem.
+          Phasellus id felis ut leo dictum interdum. Phasellus ut sodales
+          turpis. Quisque in viverra justo. Donec in purus sit amet lectus
+          suscipit sagittis at at erat.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+          tempor venenatis sapien ac dignissim. Sed accumsan scelerisque sapien,
+          ac laoreet velit. Donec a turpis sit amet justo aliquam posuere.
+        </p>
+        <p>
+          You can reach me via email at
+          <a href="mailto:ruthunit&#64;artofthemaze.com"
+            >ruthunit&#64;artofthemaze.com</a
+          >.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="gallery-wrapper">
+      <h2 class="gallery-heading">Gallery</h2>
+      <div class="gallery">
+        <div class="gallery-item">
+          <div class="gallery-image-container">
+          <img
+            src="images/placeholder1.jpg"
+            alt="Placeholder Maze Image 1"
+            class="gallery-image"
+          />
+          <div class="gallery-info">
+            <h3>Image Title 1</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+              accumsan, metus ultrices eleifend gravida, nulla nunc varius
+              lectus, nec rutrum justo nibh eu lectus.
+            </p>
+          </div>
+        </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-image-container">
+          <img
+            src="images/placeholder2.jpg"
+            alt="Placeholder Maze Image 2"
+            class="gallery-image"
+          />
+          <div class="gallery-info">
+            <h3>Image Title 2</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+              accumsan, metus ultrices eleifend gravida, nulla nunc varius
+              lectus, nec rutrum justo nibh eu lectus.
+            </p>
+          </div>
+        </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-image-container">
+          <img
+            src="images/placeholder3.jpg"
+            alt="Placeholder Maze Image 3"
+            class="gallery-image"
+          />
+          <div class="gallery-info">
+            <h3>Image Title 3</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+              accumsan, metus ultrices eleifend gravida, nulla nunc varius
+              lectus, nec rutrum justo nibh eu lectus.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <ul class="contact-links">
+    <li>Contact the Artist:</li>
+    <li><a href="mailto:ruthunit&#64;artofthemaze.com">Email</a></li>
+    <li>
+      <a
+        href="https://www.facebook.com/ruthunit"
+        target="_blank"
+        rel="noopener noreferrer"
+        (click)="toggleMenu()"
+        >FacePalm</a
+      >
+    </li>
+    <li>
+      <a
+        href="http://ruthunit.bsky.social/"
+        target="_blank"
+        rel="noopener noreferrer"
+        (click)="toggleMenu()"
+        >BlueSky</a
+      >
+    </li>
+  </ul>
+</footer>
