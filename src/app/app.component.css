@@ -149,62 +149,99 @@ header {
   line-height: 1.5;
 }
 
-/* Gallery styling */
+/* Gallery Section Container */
 #gallery {
   padding: 20px;
-  background-color: rgb(255, 255, 255, 0.8);
+  /* Use rgba for a semi-transparent white background */
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
+/* Gallery Wrapper: Centers the gallery and sets its maximum width to 1200px */
 .gallery-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
+/* Gallery Heading */
 .gallery-heading {
-    font-family: 'Playfair Display', serif;
-    color: rgb(43, 45, 44);
-    margin-bottom: 20px;
-    text-align: left;
+  font-family: 'Playfair Display', serif;
+  color: rgb(43, 45, 44);
+  margin-bottom: 20px;
+  text-align: left;
 }
 
-.gallery-container {
+/* Gallery Container (each item will be in a column) */
+.gallery {
   display: flex;
   flex-direction: column;
   gap: 30px;
   align-items: center;
 }
 
+/* Each Gallery Item takes the full width of the wrapper */
 .gallery-item {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-gallery-image-container {
-    position: relative
-    };
+/* The Image Container: display image and info side by side */
+.gallery-image-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-start;
+  /* Align children to the top */
+}
 
+/* Gallery Image: Takes 50% of the container width */
 .gallery-image {
-  width: 100%;
+  width: 70%;
   height: auto;
   display: block;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.gallery-item p {
-  margin-top: 10px;
-  font-family: "Roboto", sans-serif;
-  font-size: 1rem;
-  color: rgb(43, 45, 44);
-}
-
-.gallery-info p {
-  width: 100%;
+/* Gallery Info: Takes 50% of the container width */
+.gallery-info {
+  width: 30%;
   text-align: left;
 }
 
+/* Gallery Info Text Styling */
+.gallery-info h3 {
+  font-family: 'Roboto', sans-serif;
+  color: rgb(43, 45, 44);
+  margin-bottom: 10px;
+}
+
+.gallery-info p {
+  margin-top: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  color: rgb(43, 45, 44);
+  text-align: left;
+}
+
+/* Responsive Adjustments for Phones */
+@media (max-width: 600px) {
+  .gallery-image-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gallery-image,
+  .gallery-info {
+    width: 100%;
+  }
+
+  .gallery-info {
+    text-align: center;
+  }
+}
 /* Footer styles */
 footer {
   padding: 20px;
