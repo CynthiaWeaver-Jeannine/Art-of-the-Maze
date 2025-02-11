@@ -19,9 +19,10 @@ header {
   align-items: center;
 }
 
+/* Base Styles for the logo and title */
 .logo-container img {
   height: 100px;
-  margin-right: 15px;
+  transition: height 0.3x;
 }
 
 .title-container h1 {
@@ -29,6 +30,19 @@ header {
   font-size: 3rem;
   color: rgb(43, 45, 44);
   margin: 0;
+  transition: font-size 0.3s;
+}
+
+/* Initially, the break is inline (so on larger screens the title appears on one line) */
+.title-break {
+  display: inline;
+}
+
+/* Media Query: At 913px or below, break the title after the semicolon */
+@media (max-width: 913px) {
+  .title-break {
+    display: block;
+  }
 }
 
 .desktop-nav {
@@ -102,10 +116,12 @@ header {
   opacity: 0.8;
 }
 
+/* Centered Image Styling */
 .centered-image {
   display: block;
-  max-width: 40%;
+  max-width: 50%;
   height: auto;
+  padding-top: 20px;
   margin: 0 auto;
 }
 
@@ -114,7 +130,7 @@ header {
   font-size: 1rem;
   color: rgb(43, 45, 44);
   text-align: center;
-  margin-top: 0;
+  margin-top: -10px;
 }
 
 #about {
@@ -123,7 +139,7 @@ header {
   border-radius: 8px;
   margin: 20px auto;
   max-width: 800px;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
 }
 
 .about-content {
@@ -165,7 +181,7 @@ header {
 
 /* Gallery Heading */
 .gallery-heading {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   color: rgb(43, 45, 44);
   margin-bottom: 20px;
   text-align: left;
@@ -196,7 +212,7 @@ header {
   /* Align children to the top */
 }
 
-/* Gallery Image: Takes 50% of the container width */
+/* Gallery Image: Takes 70% of the container width */
 .gallery-image {
   width: 70%;
   height: auto;
@@ -205,7 +221,7 @@ header {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Gallery Info: Takes 50% of the container width */
+/* Gallery Info: Takes 30% of the container width */
 .gallery-info {
   width: 30%;
   text-align: left;
@@ -213,39 +229,23 @@ header {
 
 /* Gallery Info Text Styling */
 .gallery-info h3 {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   color: rgb(43, 45, 44);
   margin-bottom: 10px;
 }
 
 .gallery-info p {
   margin-top: 10px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1rem;
   color: rgb(43, 45, 44);
   text-align: left;
 }
 
-/* Responsive Adjustments for Phones */
-@media (max-width: 600px) {
-  .gallery-image-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .gallery-image,
-  .gallery-info {
-    width: 100%;
-  }
-
-  .gallery-info {
-    text-align: center;
-  }
-}
 /* Footer styles */
 footer {
   padding: 20px;
-  background:rgb(190, 210, 220);
+  background: rgb(190, 210, 220);
   text-align: center;
 }
 
@@ -266,7 +266,42 @@ footer .contact-links li a:hover {
   opacity: 0.8;
 }
 
-@media (max-width: 768px) {
+/* Responsive Adjustments for Phones */
+
+@media (max-width: 601px) {
+  .header-content {
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo-container img {
+    height: 70px;
+    /* Reduce logo size */
+  }
+
+  .title-container h1 {
+    font-size: 2rem;
+    /* Reduce title font size */
+    text-align: center;
+  }
+
+  .gallery-image-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gallery-image,
+  .gallery-info {
+    width: 100%;
+  }
+
+  .gallery-info {
+    text-align: left;
+    margin-top: -20px;
+  }
+}
+
+@media (max-width: 850px) {
   .desktop-nav {
     display: none;
   }
@@ -288,4 +323,16 @@ footer .contact-links li a:hover {
   .about-photo {
     max-width: 40%;
   }
+}
+@media (max-width: 435px) {
+  .logo-container img {
+    display: none;
+ }
+
+  .title-container h1 {
+    font-size: 1.5rem;
+    /* Reduce title font size */
+    text-align: center;
+  }
+
 }
